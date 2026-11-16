@@ -9,11 +9,18 @@
 
 
 def two_sum(nums, target):
-    # Outline (write your plan here first):
-    #   ...
+    # Outline (write your plan here first): I plan to run through the array using two loops, adding the first value of the array to every other individually,
+    # and compare them to the target. Then, if no pair is found, I'll shift to the second value of the array and keep going until I find the working pair.
+    
     # TODO: return the indices [i, j] (i < j) of the two numbers in `nums` that add up
     #   to `target`. Assume there is exactly one answer.
-    pass
+
+    for i in range(len(nums)):
+        for j in range(i + 1, len(nums)):
+
+            if nums[i] + nums[j] == target:
+                return [i, j]
+    
 
 
 def max_profit(prices):
