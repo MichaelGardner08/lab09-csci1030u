@@ -38,19 +38,21 @@ def max_profit(prices):
 
 
 def max_subarray(nums):
-    # Outline:
-    #   ...
-    # TODO: return the largest sum of any contiguous (in-a-row) block of numbers in
-    #   `nums`. The list has at least one number.
-    pass
+    # Outline: Again, i'll be using two loops to find every possible contiguous block, keep track of the sum of each block,
+    # and update max_sum whenever we find a larger sum.
 
+    max_sum = nums[0]
 
-def is_balanced(s):   # Part 4 - stretch (optional)
-    # Outline:
-    #   ...
-    # TODO: return True if every bracket in `s` is closed correctly and in the right
-    #   order. The brackets are ( ) [ ] { }. (Hint: a list used as a stack works well.)
-    pass
+    for i in range(len(nums)):
+        current_sum = 0
+
+        for j in range(i, len(nums)):
+            current_sum += nums[j]
+
+            if current_sum > max_sum:
+                max_sum = current_sum
+
+    return max_sum
 
 
 def main():
