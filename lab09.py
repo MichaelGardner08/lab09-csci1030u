@@ -9,12 +9,9 @@
 
 
 def two_sum(nums, target):
-    # Outline (write your plan here first): I plan to run through the array using two loops, adding the first value of the array to every other individually,
+    # Outline: I plan to run through the array using two loops, adding the first value of the array to every other individually,
     # and compare them to the target. Then, if no pair is found, I'll shift to the second value of the array and keep going until I find the working pair.
     
-    # TODO: return the indices [i, j] (i < j) of the two numbers in `nums` that add up
-    #   to `target`. Assume there is exactly one answer.
-
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
 
@@ -24,11 +21,20 @@ def two_sum(nums, target):
 
 
 def max_profit(prices):
-    # Outline:
-    #   ...
-    # TODO: `prices[i]` is a stock price on day i. Return the most profit obtainable by
-    #   buying on one day and selling on a LATER day. If no profit is possible, return 0.
-    pass
+    # Outline: Similarly to two_sums, I'll use two loops to compare buying and selling prices, but only allow selling on a later day.
+    # Additionally, i'll keep track of the highest profit so I know what the best day to sell is even when I 
+
+    max_profit = 0
+
+    for i in range(len(prices)):
+        for j in range(i + 1, len(prices)):
+
+            profit = prices[j] - prices[i]
+
+            if profit > max_profit:
+                max_profit = profit
+
+    return max_profit
 
 
 def max_subarray(nums):
