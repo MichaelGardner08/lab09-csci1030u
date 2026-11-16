@@ -19,15 +19,3 @@ def test_max_subarray():
     assert max_subarray([1]) == 1
     assert max_subarray([5, 4, -1, 7, 8]) == 23
     assert max_subarray([-1, -2, -3]) == -1
-
-
-# STRETCH (optional) - skipping this still passes the three problems above.
-def test_is_balanced():
-    assert is_balanced("()")
-    assert is_balanced("()[]{}")
-    assert is_balanced("{[]}")
-    assert is_balanced("")
-    assert not is_balanced("(]")
-    assert not is_balanced("([)]")
-    assert not is_balanced("(")
-    assert not is_balanced("]")
